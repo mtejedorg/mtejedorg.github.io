@@ -187,6 +187,10 @@ html[data-theme="light"] .icon-btn .moon { display: none; }
 a.company-name:hover { text-decoration: underline; }
 .date-badge { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-2); padding: 0.3rem 0.7rem; border: 1px solid var(--border); border-radius: var(--radius-full); white-space: nowrap; align-self: flex-start; }
 .role-summary { color: var(--text-2); margin-bottom: 1rem; }
+.role-sub { display: block; font-size: 0.85rem; color: var(--text-3); }
+.role-block { margin-top: 1.5rem; padding-left: 1.1rem; border-left: 2px solid var(--border-strong); }
+.role-block .role-title { font-size: 1.05rem; }
+.role-block .timeline-header { margin-bottom: 0.6rem; }
 .bullet-list { list-style: none; display: grid; gap: 0.55rem; margin-bottom: 1.1rem; }
 .bullet-list li { position: relative; padding-left: 1.1rem; color: var(--text-2); font-size: 0.95rem; }
 .bullet-list li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
