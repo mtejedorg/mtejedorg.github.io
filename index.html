@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Tejedor | Senior software engineer · Unity, XR, native SDKs and AI agents</title>
+    <meta name="description" content="Senior software engineer with seven years in Unity and C#. Led YBVR's client engineering from prototype to a shipped Meta Quest product, built the eight-person team behind it, and designed its multi-agent AI assistant. Now building two games with AI-assisted workflows.">
+    <meta name="author" content="Marco Tejedor González">
+    <link rel="canonical" href="https://mtejedorg.github.io/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mtejedorg.github.io/">
+    <meta property="og:title" content="Marco Tejedor | Senior software engineer · Unity, XR, native SDKs and AI agents">
+    <meta property="og:description" content="Seven years in Unity and C#: a shipped Meta Quest product, a native multi-platform SDK, a multi-agent AI assistant, an eight-person team, and two games in development.">
+    <meta property="og:image" content="https://mtejedorg.github.io/assets/profile.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Marco Tejedor | Senior software engineer">
+    <meta name="twitter:description" content="Unity, XR, native SDKs and AI agents. Madrid, hybrid or remote.">
+    <meta name="twitter:image" content="https://mtejedorg.github.io/assets/profile.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='monospace' font-size='28' font-weight='700' fill='%2338bdf8'%3EMT%3C/text%3E%3C/svg%3E">
+
+    <script>
+        // Apply the stored or preferred theme before first paint to avoid a flash.
+        (function () {
+            try {
+                var stored = localStorage.getItem('theme');
+                var preferred = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', stored || preferred);
+            } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+        })();
+    </script>
+
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo"><span>&lt;</span>MT<span> /&gt;</span></a>
+
+            <nav class="nav-links" id="nav-links" aria-label="Sections">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="btn btn-secondary btn-cv" href="assets/CV_Marco_Tejedor_Gonzalez.pdf" download>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download CV</span>
+                </a>
+                <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch between dark and light theme" title="Theme">
+                    <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+                <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="section hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Available for new roles · Madrid · hybrid or remote</span>
+                    </div>
+
+                    <h1 class="hero-title">Marco Tejedor <span class="text-accent">González</span></h1>
+                    <h2 class="hero-subtitle">Senior software engineer · Unity, XR, native SDKs and AI agents</h2>
+
+                    <p class="hero-description">
+                        Seven years in Unity and C#, shipping interactive video products on Meta Quest, PICO, VIVEPORT, iOS, Android and Android TV. I led YBVR's client engineering from a prototype to a product that has streamed NBA and EuroLeague basketball in VR, built the eight-person team behind it, and designed the company's multi-agent AI assistant. Since July 2026 I'm building two games of my own, working with AI coding agents every day.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary btn-lg">
+                            <span>See the work</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="assets/CV_Marco_Tejedor_Gonzalez.pdf" class="btn btn-secondary btn-lg" download>Download CV</a>
+                        <button class="btn btn-ghost btn-lg copy-email" type="button" data-user="marco.tejedorg" data-host="gmail" data-tld="com">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            <span class="copy-text">Copy email</span>
+                        </button>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="card stat-card"><span class="stat-number">7+</span><span class="stat-label">years in Unity and C#</span></div>
+                        <div class="card stat-card"><span class="stat-number">8</span><span class="stat-label">engineers hired and led</span></div>
+                        <div class="card stat-card"><span class="stat-number">~20</span><span class="stat-label">interactive video apps shipped across four stores</span></div>
+                        <div class="card stat-card"><span class="stat-number">2</span><span class="stat-label">games in development</span></div>
+                    </div>
+                </div>
+
+                <div class="hero-avatar-wrapper">
+                    <div class="card avatar-card">
+                        <img src="assets/profile.jpg" alt="Marco Tejedor González" class="avatar-img" width="800" height="800">
+                        <div class="avatar-info">
+                            <span class="avatar-name">Marco Tejedor</span>
+                            <span class="avatar-location">Madrid, Spain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What I do</span>
+                    <h2 class="section-title">Engines, native code, and the agents that now help me write both</h2>
+                    <p class="section-lead">Most of my work sits where a product idea meets hardware limits: a headset that overheats, a store that rejects a build, a UI that should change without a release.</p>
+                </div>
+
+                <div class="about-grid">
+                    <article class="card about-card">
+                        <div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
+                        <h3>Unity engine and gameplay</h3>
+                        <p>C# and Unity since 2017: hierarchical state machines, component-based combat, ScriptableObject architecture, Zenject, Addressables, UniTask, Photon Fusion 2 multiplayer, and UI that is generated from data rather than built by hand.</p>
+                    </article>
+                    <article class="card about-card">
+                        <div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="5"></rect><circle cx="7.5" cy="12" r="2"></circle><circle cx="16.5" cy="12" r="2"></circle></svg></div>
+                        <h3>XR on mobile-class hardware</h3>
+                        <p>Meta Quest, PICO and Android XR with Meta XR SDK and OpenXR: frame budgets at 72/90/120 Hz, Compositor Layers, thermal and battery limits, passthrough and anchors, and prototypes on Meta Spatial SDK, VIVE Wave and XREAL. On the Oculus Go that bought about 25% longer before thermal shutdown; on Samsung phones, about 20% more battery life.</p>
+                    </article>
+                    <article class="card about-card">
+                        <div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
+                        <h3>Native multi-platform SDKs</h3>
+                        <p>A C++ core with Java and Kotlin bridges under a Unity layer, Vulkan and OpenGL ES rendering plugins that push video buffers straight to the GPU, and ExoPlayer customized at the JNI level. Shipped on Android, iOS, Android TV and headsets.</p>
+                    </article>
+                    <article class="card about-card">
+                        <div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 12L2.1 12a10 10 0 0 1 9.9-10v10z"></path><path d="M12 12v9.9a10 10 0 0 1-9.9-9.9H12z"></path></svg></div>
+                        <h3>AI agents, in products and in the workflow</h3>
+                        <p>A multi-agent assistant on Google ADK with RAG over video embeddings, in production within a month. Day to day: Claude Code skills, Unity MCP and coding agents, and internal workshops on how to work with them.</p>
+                    </article>
+                    <article class="card about-card">
+                        <div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                        <h3>Leading while still shipping</h3>
+                        <p>Started alone, hired the eight engineers of the Xtadium team and ran it: 1:1s, reviews, coding standards, roadmaps for executives and clients. Kept writing the SDK, the UI and the performance work throughout.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Career</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Independent Game Developer</h3>
+                                    <span class="company-name">Self-employed</span>
+                                </div>
+                                <span class="date-badge">Jul 2026 — Present | Madrid, Spain</span>
+                            </div>
+                            <p class="role-summary">Full-time on two games and on open tooling, working solo with AI coding agents.</p>
+                            <ul class="bullet-list">
+                                <li><strong>Cluck Wars:</strong> a four-player multiplayer arena game in Unity 6 on Photon Fusion 2 (shared mode) and Unity Gaming Services.</li>
+                                <li><strong>Saint Manick:</strong> a 2.5D beat-driven action roguelite in Godot 4, with a vertical slice of ten zones and an automated test suite.</li>
+                                <li><strong>cv-builder:</strong> an open-source Claude Code skill that tailors applications and is not allowed to invent a single claim.</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tag">Unity 6</span><span class="tag">Photon Fusion 2</span><span class="tag">Godot 4</span><span class="tag">Claude Code</span><span class="tag">Unity MCP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Lead Project Engineer (2025–2026) · Lead VR Software Developer, client team lead (2019–2025)</h3>
+                                    <span class="company-name">YBVR</span>
+                                </div>
+                                <span class="date-badge">Apr 2019 — Jul 2026 | Madrid, Spain</span>
+                            </div>
+                            <p class="role-summary">YBVR builds interactive video streaming apps and a white-label SDK for iOS, Android, Android TV and XR headsets. I led the client side of Xtadium, its flagship product on Meta Quest, from prototype through release and live iteration, and led the client engineering team from 2020 to mid-2025. My last year there was as Lead Project Engineer: architecture, prototypes on new XR hardware and AI wearables, and the AI assistant, with one engineer reporting to me.</p>
+                            <ul class="bullet-list">
+                                <li><strong>Shipped product:</strong> took Xtadium from prototype to a Meta Quest release that has carried NBA and EuroLeague games in VR and runs live at events such as the Mutua Madrid Open.</li>
+                                <li><strong>Team:</strong> started as the only client engineer, hired all eight and line-managed the team from 2020 to mid-2025: 1:1s, mentoring, code reviews, architecture and coding standards.</li>
+                                <li><strong>AI assistant:</strong> designed and launched a multi-agent assistant over the video catalogue (Google ADK, Vertex AI, Gemini, RAG), production-ready in one month.</li>
+                                <li><strong>Native SDK:</strong> architected the C++/Java/Kotlin SDK under the Unity layer, with Vulkan and OpenGL ES plugins streaming video to the GPU; also shipped for Android TV.</li>
+                                <li><strong>Data-driven UI:</strong> rebuilt the whole UI as a system edited from a web CMS, so layouts change without a release; menus became about 90% more responsive.</li>
+                                <li><strong>Performance:</strong> a firm 60 fps on the Oculus Go and 90/120 Hz on Quest, by profiling on device, managing CPU/GPU levels and moving video and UI onto Compositor Layers.</li>
+                                <li><strong>Releases and live ops:</strong> around twenty apps through App Store Connect, Google Play Console, the Meta Store and VIVEPORT; Remote Config, feature flags, A/B testing, Addressables content drops, Meta in-app purchases, Crashlytics everywhere.</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tag">Unity</span><span class="tag">C#</span><span class="tag">C++</span><span class="tag">Java / Kotlin</span><span class="tag">Meta XR SDK</span><span class="tag">OpenXR</span><span class="tag">Google ADK</span><span class="tag">GCP</span><span class="tag">Jenkins</span>
+                            </div>
+                            <div class="press-strip">
+                                <span class="press-label">YBVR partners, press and live events</span>
+                                <div class="partner-chips">
+                                    <span class="partner-chip">EuroLeague</span><span class="partner-chip">ESPN</span><span class="partner-chip">UFC</span><span class="partner-chip">NASCAR</span><span class="partner-chip">DAZN</span><span class="partner-chip">Paris Saint-Germain</span><span class="partner-chip">AWS</span><span class="partner-chip">Google Cloud</span>
+                                </div>
+                                <div class="press-links">
+                                    <a href="https://www.sportspro.com/news/broadcast-ott/euroleague-tv-ybvr-virtual-reality-vr-xtadium-meta-quest-real-madrid-barcelona/" target="_blank" rel="noopener">SportsPro: EuroLeague broadcasts Real Madrid–Barcelona in VR via Xtadium →</a>
+                                    <a href="https://ybvr.com/" target="_blank" rel="noopener">ybvr.com: live at the Mutua Madrid Open, EuroLeague and BIME →</a>
+                                </div>
+                                <p class="project-note" style="margin-top:0.6rem;">Partner names come from YBVR's own list. They are the company's partners, not personal claims.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Software Developer</h3>
+                                    <span class="company-name">Indra</span>
+                                </div>
+                                <span class="date-badge">Nov 2018 — Apr 2019 | Madrid, Spain</span>
+                            </div>
+                            <p class="role-summary">Maintenance of an existing voice-server product, plus QA tooling.</p>
+                            <ul class="bullet-list">
+                                <li>Maintained a VXML voice-server system.</li>
+                                <li>Wrote Bash and Python tools for QA, including an automated false-positive detection tool.</li>
+                            </ul>
+                            <div class="tech-tags"><span class="tag">VXML</span><span class="tag">Bash</span><span class="tag">Python</span><span class="tag">SQL</span></div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="card timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="role-title">Software Applications Engineer</h3>
+                                    <span class="company-name">Valid</span>
+                                </div>
+                                <span class="date-badge">Nov 2017 — Nov 2018 | Madrid, Spain</span>
+                            </div>
+                            <p class="role-summary">Tooling for embedded SIMs (eUICC): a C++ emulator and the desktop tools built around it.</p>
+                            <ul class="bullet-list">
+                                <li>Maintained a C++ eUICC smart-card emulator for Windows.</li>
+                                <li>Built the .NET desktop tools (C#, VB) used to create, analyze and test eUICCs.</li>
+                            </ul>
+                            <div class="tech-tags"><span class="tag">C++</span><span class="tag">.NET</span><span class="tag">C#</span><span class="tag">eUICC</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Work</span>
+                    <h2 class="section-title">Projects</h2>
+                    <p class="section-lead">Real captures where a public image exists; schematic diagrams for internal work that has no public screenshot.</p>
+                </div>
+
+                <div class="filter-tabs" role="tablist" aria-label="Filter projects">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="games">Games</button>
+                    <button class="filter-btn" data-filter="xr">XR</button>
+                    <button class="filter-btn" data-filter="ai">AI and agents</button>
+                    <button class="filter-btn" data-filter="sdk">SDKs and tooling</button>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="card project-card" data-category="xr">
+                        <div class="project-img-wrapper">
+                            <div class="diagram-visual" aria-hidden="true" data-diagram="xtadium"></div>
+                            <span class="badge">Shipped product</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Xtadium, VR live sports</h3>
+                            <p>Live sport and music in VR and MR on Meta Quest: 180°/360° playback, multi-camera switching and a synchronized Watch Party. Carried NBA games for some years, broadcast EuroLeague's Real Madrid–Barcelona in VR and ran live at the Mutua Madrid Open.</p>
+                            <div class="tech-tags"><span class="tag">Unity</span><span class="tag">Meta Quest</span><span class="tag">OpenXR</span><span class="tag">Photon</span></div>
+                            <div class="project-links"><button class="btn-link view-project-btn" data-modal="modal-xtadium">Details →</button></div>
+                        </div>
+                    </article>
+
+                    <article class="card project-card" data-category="ai sdk">
+                        <div class="project-img-wrapper">
+                            <div class="diagram-visual" aria-hidden="true" data-diagram="ai"></div>
+                            <span class="badge badge-ok">In production</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Multi-agent AI assistant</h3>
+                            <p>An assistant over YBVR's video catalogue: Google ADK agents, RAG over video embeddings in Vertex AI, Gemini, FastAPI on Cloud Run. Designed from scratch and production-ready in one month.</p>
+                            <div class="tech-tags"><span class="tag">Google ADK</span><span class="tag">Vertex AI</span><span class="tag">RAG</span><span class="tag">Python</span></div>
+                            <div class="project-links"><button class="btn-link view-project-btn" data-modal="modal-ai">Details →</button></div>
+                        </div>
+                    </article>
+
+                    <article class="card project-card" data-category="sdk">
+                        <div class="project-img-wrapper">
+                            <div class="diagram-visual" aria-hidden="true" data-diagram="sdk"></div>
+                            <span class="badge">Core engineering</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Native multi-platform SDK</h3>
+                            <p>The layer under Xtadium and the white-label apps: a C++ core, Java and Kotlin bridges, a Unity C# layer, and Vulkan/OpenGL ES plugins that stream video buffers to the GPU. Unity SDK since 2019, Android 2021, iOS 2023, plus Android TV.</p>
+                            <div class="tech-tags"><span class="tag">C++</span><span class="tag">Java / Kotlin</span><span class="tag">Vulkan</span><span class="tag">ExoPlayer</span></div>
+                            <div class="project-links"><button class="btn-link view-project-btn" data-modal="modal-sdk">Details →</button></div>
+                        </div>
+                    </article>
+
+                    <!-- placeholder until CluckWars publishes portfolio.json -->
+                    <article class="card project-card accent-amber" data-category="games" data-slug="cluckwars">
+                        <div class="project-img-wrapper">
+                            <img src="assets/cluckwars_match.jpg" alt="Cluck Wars: a match in progress, with the HUD and four chickens on the farm" class="project-img" loading="lazy">
+                            <span class="badge badge-amber">Solo · built with AI agents</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Cluck Wars</h3>
+                            <p>Four chickens, one farm, forty-five seconds. A 4-player free-for-all in Unity 6 where players collect food, bank it and steal from rivals, on Photon Fusion 2 in shared mode with four classes and a data-driven ability pool.</p>
+                            <div class="tech-tags"><span class="tag">Unity 6</span><span class="tag">Photon Fusion 2</span><span class="tag">UGS</span><span class="tag">Zenject</span></div>
+                            <div class="project-links">
+                                <button class="btn-link view-project-btn" data-modal="modal-cluckwars">Details →</button>
+                                <a href="https://github.com/mtejedorg/CluckWars" target="_blank" rel="noopener" class="btn-link-secondary">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- placeholder until SaintManick2026 publishes portfolio.json -->
+                    <article class="card project-card accent-magenta" data-category="games" data-slug="saintmanick">
+                        <div class="project-img-wrapper">
+                            <img src="assets/saintmanick_capstone_2017.jpg" alt="Saint Manick: the 2017 Unity capstone prototype, side-scrolling combat in a red-lit street" class="project-img" loading="lazy">
+                            <span class="badge badge-magenta">Solo · built with AI agents</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Saint Manick</h3>
+                            <p>A 2.5D beat-driven action roguelite in Godot 4.6: ten zones, two bosses, a tempo engine that drives every enemy telegraph, and a self-verifying test suite. Rebuilt in 2026 from my 2017 master's capstone (pictured).</p>
+                            <div class="tech-tags"><span class="tag">Godot 4.6</span><span class="tag">GDScript</span><span class="tag">State machines</span><span class="tag">Automated tests</span></div>
+                            <div class="project-links">
+                                <button class="btn-link view-project-btn" data-modal="modal-saintmanick">Details →</button>
+                                <a href="https://github.com/mtejedorg/SaintManick2026" target="_blank" rel="noopener" class="btn-link-secondary">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- synced by brief 06 -->
+                    <article class="card project-card" data-category="ai sdk" data-slug="cvkit">
+                        <div class="project-img-wrapper">
+                            <img src="assets/cvbuilder_sample.png" alt="A sample CV page produced by cv-builder for a fictional candidate" class="project-img" loading="lazy" style="object-position: top;">
+                            <span class="badge badge-ok">Open source</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>cv-builder</h3>
+                            <p>A Claude Code skill that tailors a CV, cover letter and portfolio to a job posting from a single fact file. It stops and asks about every gap, leads with the strongest proof, reviews itself with a fresh-context agent, and compiles verified A4 PDFs. Built with the same agents it describes.</p>
+                            <div class="tech-tags"><span class="tag">Claude Code</span><span class="tag">Python</span><span class="tag">Agent workflow</span></div>
+                            <div class="project-links">
+                                <a href="https://mtejedorg.github.io/cvkit/" target="_blank" rel="noopener" class="btn-link">How it works →</a>
+                                <a href="https://github.com/mtejedorg/cvkit" target="_blank" rel="noopener" class="btn-link-secondary">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card project-card" data-category="xr ai">
+                        <div class="project-img-wrapper">
+                            <div class="diagram-visual" aria-hidden="true" data-diagram="spatial"></div>
+                            <span class="badge">Prototypes</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Spatial and smart-glasses prototypes</h3>
+                            <p>Meta Spatial SDK and Android XR prototypes for spatial video and panels, and a Kotlin abstraction layer for smart glasses (display, interaction, camera capture, BLE audio) with a voice assistant on top. 2025–2026.</p>
+                            <div class="tech-tags"><span class="tag">Meta Spatial SDK</span><span class="tag">Android XR</span><span class="tag">Kotlin</span></div>
+                            <div class="project-links"><button class="btn-link view-project-btn" data-modal="modal-spatial">Details →</button></div>
+                        </div>
+                    </article>
+
+                    <article class="card project-card" data-category="sdk">
+                        <div class="project-img-wrapper">
+                            <div class="diagram-visual" aria-hidden="true" data-diagram="tools"></div>
+                            <span class="badge">Tooling</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Data-driven UI and editor tooling</h3>
+                            <p>Xtadium's UI as a procedurally generated system fed by CMS contracts and server state, with dependency injection, Addressables for remote content, and the editor tools that kept designers out of the build queue.</p>
+                            <div class="tech-tags"><span class="tag">UI Toolkit</span><span class="tag">Zenject</span><span class="tag">Addressables</span></div>
+                            <div class="project-links"><button class="btn-link view-project-btn" data-modal="modal-tools">Details →</button></div>
+                        </div>
+                    </article>
+
+                    <article class="card project-card" data-category="sdk">
+                        <div class="project-img-wrapper">
+                            <div class="diagram-visual" aria-hidden="true" data-diagram="euicc"></div>
+                            <span class="badge">Hardware tooling</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>eUICC emulator and desktop tooling</h3>
+                            <p>A C++ emulator standing in for embedded-SIM hardware during development and QA, and the .NET desktop tools (C#, VB) the team used to create, analyze and test eUICCs. Valid, 2017–2018.</p>
+                            <div class="tech-tags"><span class="tag">C++</span><span class="tag">.NET</span><span class="tag">C#</span></div>
+                            <div class="project-links"><button class="btn-link view-project-btn" data-modal="modal-euicc">Details →</button></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Stack</span>
+                    <h2 class="section-title">Skills</h2>
+                    <p class="section-lead">Highlighted items are the ones I have shipped with and could be interviewed on in depth.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="card skill-category">
+                        <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Languages and engines</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill featured">C#</span><span class="skill-pill featured">Unity</span><span class="skill-pill featured">C++</span><span class="skill-pill">Java</span><span class="skill-pill">Kotlin</span><span class="skill-pill">Python</span><span class="skill-pill">GDScript / Godot 4</span><span class="skill-pill">HLSL / GLSL / Metal</span><span class="skill-pill">Bash</span>
+                        </div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="5"></rect><circle cx="7.5" cy="12" r="2"></circle><circle cx="16.5" cy="12" r="2"></circle></svg>XR and multiplayer</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill featured">Meta XR SDK</span><span class="skill-pill featured">OpenXR</span><span class="skill-pill featured">Photon Fusion 2</span><span class="skill-pill">XR Interaction Toolkit</span><span class="skill-pill">Compositor Layers</span><span class="skill-pill">Meta Spatial SDK</span><span class="skill-pill">Android XR</span><span class="skill-pill">Unity Gaming Services</span><span class="skill-pill">Photon Realtime / Voice</span>
+                        </div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path></svg>AI, cloud and tooling</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill featured">Google ADK</span><span class="skill-pill featured">RAG and function calling</span><span class="skill-pill featured">Claude Code skills</span><span class="skill-pill">Vertex AI / Gemini</span><span class="skill-pill">Unity MCP</span><span class="skill-pill">FastAPI</span><span class="skill-pill">GCP / Cloud Run</span><span class="skill-pill">Docker</span><span class="skill-pill">Firebase</span><span class="skill-pill">Jenkins</span>
+                        </div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Architecture and rendering</h3>
+                        <div class="skill-pills">
+                            <span class="skill-pill featured">Data-driven UI</span><span class="skill-pill featured">Native rendering plugins</span><span class="skill-pill">Zenject</span><span class="skill-pill">UniTask</span><span class="skill-pill">Addressables</span><span class="skill-pill">URP / Shader Graph</span><span class="skill-pill">Vulkan / OpenGL ES</span><span class="skill-pill">ExoPlayer / Media3</span><span class="skill-pill">Remote Config / A/B testing</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="skills-note">Not on this list on purpose: things I have only tried or supervised. Ask me and I'll tell you which is which.</p>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Background</span>
+                    <h2 class="section-title">Education</h2>
+                </div>
+                <div class="edu-grid">
+                    <article class="card edu-card">
+                        <span class="edu-years">2016 – 2017</span>
+                        <h3>Master's Degree in Video Game Design and Development</h3>
+                        <p class="edu-school">Universidad Complutense de Madrid</p>
+                        <p>Capstone: a publicly exhibited beat 'em up vertical slice in Unity, with combat and animation state machines and input buffering. It is the origin of Saint Manick, rebuilt in Godot in 2026.</p>
+                    </article>
+                    <article class="card edu-card">
+                        <span class="edu-years">2012 – 2017</span>
+                        <h3>Degree in Audiovisual and Multimedia Systems (Telecommunications) Engineering</h3>
+                        <p class="edu-school">Universidad Rey Juan Carlos</p>
+                        <p>Computer vision, robotics, signal processing and real-time 3D simulation. Classes completed in 2016; final-year project in 2016–17 alongside the master's. Additional title: Robotics and Computer Vision specialization.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="card contact-card">
+                    <div class="contact-header">
+                        <span class="section-tag">Contact</span>
+                        <h2 class="section-title">Let's talk</h2>
+                        <p class="contact-subtitle">Email is the fastest way to reach me. I'm in Madrid, open to hybrid, remote or on-site, and happy to travel.</p>
+                    </div>
+                    <div class="contact-links">
+                        <button class="contact-item contact-email" type="button" data-user="marco.tejedorg" data-host="gmail" data-tld="com" aria-label="Open your email client">
+                            <div class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+                            <div class="contact-details"><span class="contact-label">Email</span><span class="contact-val email-text">click to reveal</span></div>
+                        </button>
+                        <a href="https://linkedin.com/in/marcotejedorgonzalez" target="_blank" rel="noopener" class="contact-item">
+                            <div class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></div>
+                            <div class="contact-details"><span class="contact-label">LinkedIn</span><span class="contact-val">marcotejedorgonzalez</span></div>
+                        </a>
+                        <a href="https://github.com/mtejedorg" target="_blank" rel="noopener" class="contact-item">
+                            <div class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></div>
+                            <div class="contact-details"><span class="contact-label">GitHub</span><span class="contact-val">mtejedorg</span></div>
+                        </a>
+                        <a href="assets/CV_Marco_Tejedor_Gonzalez.pdf" class="contact-item" download>
+                            <div class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div>
+                            <div class="contact-details"><span class="contact-label">CV</span><span class="contact-val">Download PDF</span></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>© 2026 Marco Tejedor González. Built with HTML, CSS and JavaScript, with help from AI coding agents. Hosted on GitHub Pages.</p>
+            <p>Every claim on this page comes from work I did; where no public image exists, the diagram says so.</p>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+        <div class="card modal-box" id="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" id="modal-close" type="button" aria-label="Close">&times;</button>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
