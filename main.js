@@ -161,37 +161,40 @@ function initProjectFilters() {
 const modalData = {
     'modal-cluckwars': {
         title: 'Cluck Wars',
-        badge: 'Solo · built with AI agents · in development (2026)',
-        visual: `<div class="modal-strip">
+        badge: 'in development · 2026',
+        visual: `<div class="modal-visual"><img src="assets/cluckwars_preview.jpg" alt="Cluck Wars: a yellow chicken mid-match, with the score HUD, ability buttons and a 00:22 timer" loading="lazy"></div>
+        <div class="modal-strip">
             <img src="assets/cluckwars_menu.jpg" alt="Cluck Wars main menu with the four classes" loading="lazy">
             <img src="assets/cluckwars_postmatch.jpg" alt="Cluck Wars post-match standings screen" loading="lazy">
         </div>`,
         tech: ['Unity 6', 'URP', 'Photon Fusion 2 (shared mode)', 'Unity Gaming Services', 'Zenject', 'UI Toolkit', 'Unity MCP'],
-        links: [{ label: 'Site ↗', url: 'https://mtejedorg.github.io/CluckWars/' }, { label: 'GitHub ↗', url: 'https://github.com/mtejedorg/CluckWars' }],
+        links: [{ label: 'Site ↗', url: 'https://mtejedorg.github.io/CluckWars/' }, { label: 'Mechanics ↗', url: 'https://mtejedorg.github.io/CluckWars/mechanics.html' }, { label: 'Tech ↗', url: 'https://mtejedorg.github.io/CluckWars/tech.html' }, { label: 'GitHub ↗', url: 'https://github.com/mtejedorg/CluckWars' }],
         description: `
             <p>Four chickens, one farm, forty-five seconds. A 4-player free-for-all where players collect food, bank it at their base and steal from rivals. First to forty units, or the most food when the clock runs out, wins. Designed and engineered solo, with AI coding agents (Claude Code, Unity MCP) doing a real share of the typing.</p>
             <h4>What's inside</h4>
             <ul>
-                <li><strong>Networking:</strong> Photon Fusion 2 in shared mode. Each player's state authority owns their chicken; a steal is credited optimistically by the thief and clamped by the victim's authority. Lobby, relay and authentication on Unity Gaming Services.</li>
-                <li><strong>Classes and abilities:</strong> four classes (Fatty, Speedy, Warrior, Assassin) and a shared pool of steal, control, defense and utility abilities, all data-driven through ScriptableObjects.</li>
-                <li><strong>Balance from data:</strong> every number in the design docs ships straight from the game's own data files, so design and implementation cannot drift apart.</li>
+                <li><strong>Networking:</strong> Photon Fusion 2 in shared mode. Each player's state authority owns their chicken; a steal is credited optimistically by the thief and clamped by the victim's authority. Lobby and anonymous authentication on Unity Gaming Services.</li>
+                <li><strong>Classes and abilities:</strong> four classes (Fatty, Speedy, Warrior, Assassin) and 29 steal, control, defense and utility abilities, almost all class-specific, all data-driven through ScriptableObjects.</li>
+                <li><strong>Balance from a model:</strong> class stats are solved against a Solo Clear Time target, and a pure-C# Balance Oracle checks the shipped values in EditMode tests.</li>
                 <li><strong>Architecture:</strong> Zenject dependency injection, hierarchical state machines, a 4-slot ability loadout with targeting, cooldowns and hitboxes, and a meta-progression layer (journal, economy, unlock contracts).</li>
             </ul>`
     },
     'modal-saintmanick': {
         title: 'Saint Manick',
-        badge: 'Solo · built with AI agents · in development (2026)',
-        visual: `<div class="modal-visual"><img src="assets/saintmanick_capstone_2017.jpg" alt="The 2017 Unity capstone prototype of Saint Manick" loading="lazy"></div>`,
+        badge: 'in development · 2026',
+        visual: `<div class="modal-visual"><img src="assets/saintmanick_preview.jpg" alt="Saint Manick: Nick, in cyan outline, runs along a neon-lit street in Zone 1 with a magenta Runner close behind" loading="lazy"></div>
+        <div class="modal-visual"><img src="assets/saintmanick_capstone_2017.jpg" alt="The 2017 Unity capstone prototype of Saint Manick" loading="lazy"></div>
+        <p style="font-size:.85rem;opacity:.8;margin:-.75rem 0 1.25rem;">Origin, 2017: the Unity capstone this project rebuilds.</p>`,
         tech: ['Godot 4.6', 'GDScript', 'Hierarchical state machines', 'Hitbox / hurtbox components', 'Rhythm conductor', 'Automated tests'],
-        links: [{ label: 'Site ↗', url: 'https://mtejedorg.github.io/SaintManick2026/' }, { label: 'GitHub ↗', url: 'https://github.com/mtejedorg/SaintManick2026' }],
+        links: [{ label: 'Site ↗', url: 'https://mtejedorg.github.io/SaintManick2026/' }, { label: 'Mechanics ↗', url: 'https://mtejedorg.github.io/SaintManick2026/mechanics.html' }, { label: 'Tech ↗', url: 'https://mtejedorg.github.io/SaintManick2026/tech.html' }, { label: 'GitHub ↗', url: 'https://github.com/mtejedorg/SaintManick2026' }],
         description: `
-            <p>A 2.5D action roguelite beat 'em up. Nick, an android combat unit, fights through ten zones where the camera shifts between side-scrolling and top-down bullet-hell. The picture is the 2017 Unity capstone from my master's, which this project rebuilds from scratch in Godot 4; a capture of the current build is coming.</p>
+            <p>A 2.5D action roguelite beat 'em up. Nick, a rogue corporate enforcer with a bionic arm and a katana, fights through ten zones where the camera shifts between side-scrolling and top-down bullet-hell. This project rebuilds from scratch in Godot 4 the 2017 Unity capstone from my master's (second picture).</p>
             <h4>What's inside</h4>
             <ul>
                 <li><strong>Vertical slice:</strong> all ten zones, two bosses, a roguelite meta-loop, and a data-driven shop and combo skill tree.</li>
                 <li><strong>Beat-driven combat:</strong> a tempo "Conductor" drives every hazard and enemy telegraph off a variable-BPM clock. The player is never forced to act on the beat; the enemies are.</li>
                 <li><strong>Game feel:</strong> hit-stop micro-pauses, procedural screenshake, a VFX manager and dynamic audio buses.</li>
-                <li><strong>Self-verifying:</strong> an automated suite of 100 tests plus a headless smoke run that catches scene and shader regressions.</li>
+                <li><strong>Self-verifying:</strong> 610 automated tests run headless, plus a 300-frame smoke run and a log search that catch the script, shader and loader errors the tests cannot see.</li>
             </ul>`
     },
     'modal-xtadium': {
