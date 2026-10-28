@@ -188,7 +188,7 @@
                             <div class="timeline-header">
                                 <div>
                                     <h3 class="role-title">Lead Project Engineer (2025–2026) · Lead VR Software Developer, client team lead (2019–2025)</h3>
-                                    <span class="company-name">YBVR</span>
+                                    <a class="company-name" href="https://www.ybvr.com/" target="_blank" rel="noopener">YBVR ↗</a>
                                 </div>
                                 <span class="date-badge">Apr 2019 — Jul 2026 | Madrid, Spain</span>
                             </div>
@@ -225,7 +225,7 @@
                             <div class="timeline-header">
                                 <div>
                                     <h3 class="role-title">Software Developer</h3>
-                                    <span class="company-name">Indra</span>
+                                    <a class="company-name" href="https://www.indragroup.com/en/" target="_blank" rel="noopener">Indra ↗</a>
                                 </div>
                                 <span class="date-badge">Nov 2018 — Apr 2019 | Madrid, Spain</span>
                             </div>
@@ -244,7 +244,7 @@
                             <div class="timeline-header">
                                 <div>
                                     <h3 class="role-title">Software Applications Engineer</h3>
-                                    <span class="company-name">Valid</span>
+                                    <a class="company-name" href="https://www.valid.com/" target="_blank" rel="noopener">Valid ↗</a>
                                 </div>
                                 <span class="date-badge">Nov 2017 — Nov 2018 | Madrid, Spain</span>
                             </div>
@@ -274,10 +274,13 @@
                     <button class="filter-btn" data-filter="xr">XR</button>
                     <button class="filter-btn" data-filter="ai">AI and agents</button>
                     <button class="filter-btn" data-filter="sdk">SDKs and tooling</button>
+                    <button class="filter-btn" data-filter="ybvr">YBVR</button>
+                    <button class="filter-btn" data-filter="valid">Valid</button>
+                    <button class="filter-btn" data-filter="own">Own projects</button>
                 </div>
 
                 <div class="projects-grid">
-                    <article class="card project-card" data-category="xr">
+                    <article class="card project-card" data-category="xr ybvr">
                         <div class="project-img-wrapper">
                             <div class="diagram-visual" aria-hidden="true" data-diagram="xtadium"></div>
                             <span class="badge">Shipped product</span>
@@ -286,11 +289,14 @@
                             <h3>Xtadium, VR live sports</h3>
                             <p>Live sport and music in VR and MR on Meta Quest: 180°/360° playback, multi-camera switching and a synchronized Watch Party. Carried NBA games for some years, broadcast EuroLeague's Real Madrid–Barcelona in VR and ran live at the Mutua Madrid Open.</p>
                             <div class="tech-tags"><span class="tag">Unity</span><span class="tag">Meta Quest</span><span class="tag">OpenXR</span><span class="tag">Photon</span></div>
-                            <div class="project-links"><button class="btn-link view-project-btn" data-modal="modal-xtadium">Details →</button></div>
+                            <div class="project-links">
+                                <button class="btn-link view-project-btn" data-modal="modal-xtadium">Details →</button>
+                                <a href="https://about.fb.com/news/2022/11/xtadium-quest-sports-in-vr/" target="_blank" rel="noopener" class="btn-link-secondary">Meta launch post ↗</a>
+                            </div>
                         </div>
                     </article>
 
-                    <article class="card project-card" data-category="ai sdk">
+                    <article class="card project-card" data-category="ai sdk ybvr">
                         <div class="project-img-wrapper">
                             <div class="diagram-visual" aria-hidden="true" data-diagram="ai"></div>
                             <span class="badge badge-ok">In production</span>
@@ -303,7 +309,7 @@
                         </div>
                     </article>
 
-                    <article class="card project-card" data-category="sdk">
+                    <article class="card project-card" data-category="sdk ybvr">
                         <div class="project-img-wrapper">
                             <div class="diagram-visual" aria-hidden="true" data-diagram="sdk"></div>
                             <span class="badge">Core engineering</span>
@@ -317,7 +323,7 @@
                     </article>
 
                     <!-- placeholder until CluckWars publishes portfolio.json -->
-                    <article class="card project-card accent-amber" data-category="games" data-slug="cluckwars">
+                    <article class="card project-card accent-amber" data-category="games own" data-slug="cluckwars">
                         <div class="project-img-wrapper">
                             <img src="assets/cluckwars_match.jpg" alt="Cluck Wars: a match in progress, with the HUD and four chickens on the farm" class="project-img" loading="lazy">
                             <span class="badge badge-amber">Solo · built with AI agents</span>
@@ -328,13 +334,14 @@
                             <div class="tech-tags"><span class="tag">Unity 6</span><span class="tag">Photon Fusion 2</span><span class="tag">UGS</span><span class="tag">Zenject</span></div>
                             <div class="project-links">
                                 <button class="btn-link view-project-btn" data-modal="modal-cluckwars">Details →</button>
+                                <a href="https://mtejedorg.github.io/CluckWars/" target="_blank" rel="noopener" class="btn-link">Site →</a>
                                 <a href="https://github.com/mtejedorg/CluckWars" target="_blank" rel="noopener" class="btn-link-secondary">GitHub ↗</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- placeholder until SaintManick2026 publishes portfolio.json -->
-                    <article class="card project-card accent-magenta" data-category="games" data-slug="saintmanick">
+                    <article class="card project-card accent-magenta" data-category="games own" data-slug="saintmanick">
                         <div class="project-img-wrapper">
                             <img src="assets/saintmanick_capstone_2017.jpg" alt="Saint Manick: the 2017 Unity capstone prototype, side-scrolling combat in a red-lit street" class="project-img" loading="lazy">
                             <span class="badge badge-magenta">Solo · built with AI agents</span>
@@ -345,13 +352,14 @@
                             <div class="tech-tags"><span class="tag">Godot 4.6</span><span class="tag">GDScript</span><span class="tag">State machines</span><span class="tag">Automated tests</span></div>
                             <div class="project-links">
                                 <button class="btn-link view-project-btn" data-modal="modal-saintmanick">Details →</button>
+                                <a href="https://mtejedorg.github.io/SaintManick2026/" target="_blank" rel="noopener" class="btn-link">Site →</a>
                                 <a href="https://github.com/mtejedorg/SaintManick2026" target="_blank" rel="noopener" class="btn-link-secondary">GitHub ↗</a>
                             </div>
                         </div>
                     </article>
 
                     <!-- synced by brief 06 -->
-                    <article class="card project-card" data-category="ai sdk" data-slug="cvkit">
+                    <article class="card project-card" data-category="ai sdk own" data-slug="cvkit">
                         <div class="project-img-wrapper">
                             <img src="assets/cvbuilder_sample.png" alt="A sample CV page produced by cv-builder for a fictional candidate" class="project-img" loading="lazy" style="object-position: top;">
                             <span class="badge badge-ok">Open source</span>
@@ -367,7 +375,7 @@
                         </div>
                     </article>
 
-                    <article class="card project-card" data-category="xr ai">
+                    <article class="card project-card" data-category="xr ai ybvr">
                         <div class="project-img-wrapper">
                             <div class="diagram-visual" aria-hidden="true" data-diagram="spatial"></div>
                             <span class="badge">Prototypes</span>
@@ -380,7 +388,7 @@
                         </div>
                     </article>
 
-                    <article class="card project-card" data-category="sdk">
+                    <article class="card project-card" data-category="sdk ybvr">
                         <div class="project-img-wrapper">
                             <div class="diagram-visual" aria-hidden="true" data-diagram="tools"></div>
                             <span class="badge">Tooling</span>
@@ -393,7 +401,7 @@
                         </div>
                     </article>
 
-                    <article class="card project-card" data-category="sdk">
+                    <article class="card project-card" data-category="sdk valid">
                         <div class="project-img-wrapper">
                             <div class="diagram-visual" aria-hidden="true" data-diagram="euicc"></div>
                             <span class="badge">Hardware tooling</span>

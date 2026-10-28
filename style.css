@@ -183,7 +183,8 @@ html[data-theme="light"] .icon-btn .moon { display: none; }
 .timeline-card { padding: 1.75rem; }
 .timeline-header { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
 .role-title { font-size: 1.2rem; }
-.company-name { color: var(--accent); font-weight: 600; }
+.company-name { color: var(--accent); font-weight: 600; text-decoration: none; }
+a.company-name:hover { text-decoration: underline; }
 .date-badge { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-2); padding: 0.3rem 0.7rem; border: 1px solid var(--border); border-radius: var(--radius-full); white-space: nowrap; align-self: flex-start; }
 .role-summary { color: var(--text-2); margin-bottom: 1rem; }
 .bullet-list { list-style: none; display: grid; gap: 0.55rem; margin-bottom: 1.1rem; }

@@ -167,7 +167,7 @@ const modalData = {
             <img src="assets/cluckwars_postmatch.jpg" alt="Cluck Wars post-match standings screen" loading="lazy">
         </div>`,
         tech: ['Unity 6', 'URP', 'Photon Fusion 2 (shared mode)', 'Unity Gaming Services', 'Zenject', 'UI Toolkit', 'Unity MCP'],
-        links: [{ label: 'GitHub ↗', url: 'https://github.com/mtejedorg/CluckWars' }],
+        links: [{ label: 'Site ↗', url: 'https://mtejedorg.github.io/CluckWars/' }, { label: 'GitHub ↗', url: 'https://github.com/mtejedorg/CluckWars' }],
         description: `
             <p>Four chickens, one farm, forty-five seconds. A 4-player free-for-all where players collect food, bank it at their base and steal from rivals. First to forty units, or the most food when the clock runs out, wins. Designed and engineered solo, with AI coding agents (Claude Code, Unity MCP) doing a real share of the typing.</p>
             <h4>What's inside</h4>
@@ -183,7 +183,7 @@ const modalData = {
         badge: 'Solo · built with AI agents · in development (2026)',
         visual: `<div class="modal-visual"><img src="assets/saintmanick_capstone_2017.jpg" alt="The 2017 Unity capstone prototype of Saint Manick" loading="lazy"></div>`,
         tech: ['Godot 4.6', 'GDScript', 'Hierarchical state machines', 'Hitbox / hurtbox components', 'Rhythm conductor', 'Automated tests'],
-        links: [{ label: 'GitHub ↗', url: 'https://github.com/mtejedorg/SaintManick2026' }],
+        links: [{ label: 'Site ↗', url: 'https://mtejedorg.github.io/SaintManick2026/' }, { label: 'GitHub ↗', url: 'https://github.com/mtejedorg/SaintManick2026' }],
         description: `
             <p>A 2.5D action roguelite beat 'em up. Nick, an android combat unit, fights through ten zones where the camera shifts between side-scrolling and top-down bullet-hell. The picture is the 2017 Unity capstone from my master's, which this project rebuilds from scratch in Godot 4; a capture of the current build is coming.</p>
             <h4>What's inside</h4>
@@ -200,6 +200,7 @@ const modalData = {
         visual: `<div class="modal-visual"><div class="diagram-visual">${diagrams.xtadium}</div></div>`,
         tech: ['Unity', 'C#', 'Meta Quest', 'PICO', 'OpenXR', 'Meta XR SDK', 'Compositor Layers', 'Photon Realtime / Voice'],
         links: [
+            { label: 'Meta launch post ↗', url: 'https://about.fb.com/news/2022/11/xtadium-quest-sports-in-vr/' },
             { label: 'SportsPro coverage ↗', url: 'https://www.sportspro.com/news/broadcast-ott/euroleague-tv-ybvr-virtual-reality-vr-xtadium-meta-quest-real-madrid-barcelona/' },
             { label: 'ybvr.com ↗', url: 'https://ybvr.com/' }
         ],
