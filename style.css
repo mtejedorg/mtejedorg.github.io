@@ -163,7 +163,7 @@ html[data-theme="light"] .icon-btn .moon { display: none; }
 
 .hero-avatar-wrapper { display: flex; justify-content: center; }
 .avatar-card { padding: 1rem; border-radius: var(--radius-lg); max-width: 380px; width: 100%; }
-.avatar-img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-md); }
+.avatar-img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-md); }
 .avatar-info { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 0.25rem 0.1rem; }
 .avatar-name { font-weight: 600; }
 .avatar-location { color: var(--text-2); font-size: 0.9rem; }
