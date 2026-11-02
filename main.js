@@ -380,8 +380,6 @@ function initEmail() {
 
 /* Phone layout helpers (CSS gates everything at <= 720px; on larger screens these do nothing visible) */
 function initPhone() {
-    const mq = window.matchMedia('(max-width: 720px)');
-
     /* Bottom tab bar: highlight the section in view. */
     const tabs = [...document.querySelectorAll('#tabbar a')];
     const tabFor = { about: 'about', experience: 'experience', projects: 'projects', skills: 'skills', education: 'skills', contact: 'contact' };
@@ -427,21 +425,7 @@ function initPhone() {
         btn.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
     }));
 
-    /* Long text collapses on phones; everything stays visible without JS or on wider screens. */
-    const hero = document.querySelector('.hero-description');
-    if (hero) {
-        const b = document.createElement('button');
-        b.type = 'button'; b.className = 'more-btn'; b.setAttribute('aria-expanded', 'false'); b.textContent = 'Read more';
-        hero.after(b);
-        b.addEventListener('click', () => {
-            const open = hero.classList.toggle('clamped') === false;
-            b.textContent = open ? 'Show less' : 'Read more';
-            b.setAttribute('aria-expanded', String(open));
-        });
-        const sync = () => hero.classList.toggle('clamped', mq.matches && b.getAttribute('aria-expanded') !== 'true');
-        sync(); (mq.addEventListener ? mq.addEventListener('change', sync) : mq.addListener(sync));
-    }
-
+    /* Long career entries collapse on phones; everything stays visible without JS or on wider screens. */
     document.querySelectorAll('.timeline-card').forEach(card => {
         const longList = [...card.querySelectorAll('.bullet-list')].some(l => l.children.length > 2);
         if (!longList && !card.querySelector('.press-strip')) return;
