@@ -563,3 +563,4 @@ a.company-name:hover { text-decoration: underline; }
     .hero-actions .btn svg { display: none; }
     .hero-actions .btn { font-size: 0.95rem; }
 }
+.hero-proof a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }

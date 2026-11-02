@@ -204,6 +204,7 @@ const modalData = {
         visual: `<div class="modal-visual"><div class="diagram-visual">${diagrams.xtadium}</div></div>`,
         tech: ['Unity', 'C#', 'Meta Quest', 'PICO', 'OpenXR', 'Meta XR SDK', 'Compositor Layers', 'Photon Realtime / Voice'],
         links: [
+            { label: 'Connect 2023 keynote ↗', url: 'https://youtu.be/3FGpCWz6ADE' },
             { label: 'Meta launch post ↗', url: 'https://about.fb.com/news/2022/11/xtadium-quest-sports-in-vr/' },
             { label: 'SportsPro coverage ↗', url: 'https://www.sportspro.com/news/broadcast-ott/euroleague-tv-ybvr-virtual-reality-vr-xtadium-meta-quest-real-madrid-barcelona/' },
             { label: 'ybvr.com ↗', url: 'https://ybvr.com/' }
