@@ -521,3 +521,32 @@ a.company-name:hover { text-decoration: underline; }
     .project-card:hover .diagram-visual { transform: scale(1.03); }
     .diagram-visual { transition: transform 0.4s; }
 }
+
+/* ==========================================================================
+   Skim-ability and clear interaction (all sizes)
+   ========================================================================== */
+.hero-description strong { color: var(--text); font-weight: 600; }
+.hero-description { line-height: 1.7; }
+.stat-number { font-size: 2rem; line-height: 1.1; }
+.stat-label { color: var(--text-2); line-height: 1.35; }
+
+/* Keyboard and touch affordances */
+:where(a, button, [tabindex]):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-sm); }
+.project-card.is-clickable { cursor: pointer; }
+.project-card.is-clickable:hover h3 { color: var(--accent); }
+
+/* "Details" reads as a button, not a stray link */
+.view-project-btn {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.4rem 0.8rem; min-height: 2.25rem; border-radius: var(--radius-full);
+    background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    transition: var(--transition);
+}
+.view-project-btn:hover { background: var(--accent); color: var(--accent-ink); text-decoration: none; }
+.filter-btn.active { box-shadow: 0 0 0 3px var(--accent-soft); }
+
+@media (max-width: 720px) {
+    .stat-number { font-size: 1.7rem; }
+    .view-project-btn { min-height: 44px; padding: 0 1rem; }
+    .hero-description { line-height: 1.65; }
+}

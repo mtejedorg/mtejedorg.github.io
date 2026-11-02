@@ -336,6 +336,13 @@ function initProjectModals() {
     document.querySelectorAll('.view-project-btn').forEach(btn => {
         btn.addEventListener('click', () => open(btn.getAttribute('data-modal'), btn));
     });
+    // Whole project card is a target, not just the small "Details" link.
+    document.querySelectorAll('.project-card').forEach(card => {
+        const btn = card.querySelector('.view-project-btn');
+        if (!btn) return;
+        card.classList.add('is-clickable');
+        card.addEventListener('click', (e) => { if (!e.target.closest('a, button')) btn.click(); });
+    });
     closeBtn.addEventListener('click', close);
     backdrop.addEventListener('click', (e) => { if (e.target === backdrop) close(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && backdrop.classList.contains('open')) close(); });
