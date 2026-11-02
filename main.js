@@ -384,11 +384,12 @@ function initPhone() {
                 if (!en.isIntersecting) return;
                 const key = tabFor[en.target.id];
                 tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === key));
+                document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
             });
         }, { rootMargin: '-45% 0px -50% 0px' });
         Object.keys(tabFor).forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
         const hero = document.getElementById('hero');
-        if (hero) new IntersectionObserver((en) => { if (en[0].isIntersecting) tabs.forEach(t => t.classList.remove('active')); }, { rootMargin: '-45% 0px -50% 0px' }).observe(hero);
+        if (hero) new IntersectionObserver((en) => { if (en[0].isIntersecting) { tabs.forEach(t => t.classList.remove('active')); document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active')); } }, { rootMargin: '-45% 0px -50% 0px' }).observe(hero);
     }
 
     /* Carousels: "2 / 5" counter that follows the swipe and the project filter. */
