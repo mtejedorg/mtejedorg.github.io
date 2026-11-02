@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Marco Tejedor | Senior software engineer · Unity, XR, native SDKs and AI agents</title>
     <meta name="description" content="Senior software engineer with seven years in Unity and C#. Led YBVR's client engineering from prototype to a shipped Meta Quest product, built the eight-person team behind it, and designed its multi-agent AI assistant. Now building two games with AI-assisted workflows.">
     <meta name="author" content="Marco Tejedor González">
@@ -122,7 +122,7 @@
                     <p class="section-lead">Most of my work sits where a product idea meets hardware limits: a headset that overheats, a store that rejects a build, a UI that should change without a release.</p>
                 </div>
 
-                <div class="about-grid">
+                <div class="about-grid" data-carousel>
                     <article class="card about-card">
                         <div class="card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
                         <h3>Unity engine and gameplay</h3>
@@ -303,7 +303,7 @@
                     <button class="filter-btn" data-filter="own">Own projects</button>
                 </div>
 
-                <div class="projects-grid">
+                <div class="projects-grid" data-carousel>
                     <article class="card project-card" data-category="xr ybvr">
                         <div class="project-img-wrapper">
                             <div class="diagram-visual" aria-hidden="true" data-diagram="xtadium"></div>
@@ -448,7 +448,7 @@
                     <h2 class="section-title">Skills</h2>
                     <p class="section-lead">Highlighted items are the ones I have shipped with and could be interviewed on in depth.</p>
                 </div>
-                <div class="skills-grid">
+                <div class="skills-grid" data-carousel>
                     <div class="card skill-category">
                         <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Languages and engines</h3>
                         <div class="skill-pills">
@@ -538,6 +538,15 @@
             <p>Every claim on this page comes from work I did; where no public image exists, the diagram says so.</p>
         </div>
     </footer>
+
+
+    <nav class="tabbar" id="tabbar" aria-label="Sections">
+        <a href="#about" data-tab="about"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg><span>About</span></a>
+        <a href="#experience" data-tab="experience"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><span>Career</span></a>
+        <a href="#projects" data-tab="projects"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Projects</span></a>
+        <a href="#skills" data-tab="skills"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>Skills</span></a>
+        <a href="#contact" data-tab="contact"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Contact</span></a>
+    </nav>
 
     <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
         <div class="card modal-box" id="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">

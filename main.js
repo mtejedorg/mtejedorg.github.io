@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectFilters();
     initProjectModals();
     initEmail();
+    initPhone();
 });
 
 /* Theme ------------------------------------------------------------------ */
@@ -366,6 +367,85 @@ function initEmail() {
             const text = btn.querySelector('.email-text');
             if (text) text.textContent = address;
             window.location.href = `mailto:${address}`;
+        });
+    });
+}
+
+/* Phone layout helpers (CSS gates everything at <= 720px; on larger screens these do nothing visible) */
+function initPhone() {
+    const mq = window.matchMedia('(max-width: 720px)');
+
+    /* Bottom tab bar: highlight the section in view. */
+    const tabs = [...document.querySelectorAll('#tabbar a')];
+    const tabFor = { about: 'about', experience: 'experience', projects: 'projects', skills: 'skills', education: 'skills', contact: 'contact' };
+    if (tabs.length && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(en => {
+                if (!en.isIntersecting) return;
+                const key = tabFor[en.target.id];
+                tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === key));
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        Object.keys(tabFor).forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+        const hero = document.getElementById('hero');
+        if (hero) new IntersectionObserver((en) => { if (en[0].isIntersecting) tabs.forEach(t => t.classList.remove('active')); }, { rootMargin: '-45% 0px -50% 0px' }).observe(hero);
+    }
+
+    /* Carousels: "2 / 5" counter that follows the swipe and the project filter. */
+    document.querySelectorAll('[data-carousel]').forEach(track => {
+        const counter = document.createElement('div');
+        counter.className = 'carousel-count';
+        counter.setAttribute('aria-hidden', 'true');
+        track.after(counter);
+        const update = () => {
+            const items = [...track.children].filter(c => c.offsetParent !== null);
+            if (!items.length) { counter.textContent = ''; return; }
+            const left = track.scrollLeft + 1;
+            let idx = 0;
+            items.forEach((c, i) => { if (c.offsetLeft - track.offsetLeft <= left + c.offsetWidth / 2) idx = i; });
+            if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 2) idx = items.length - 1;
+            counter.textContent = `${idx + 1} / ${items.length}`;
+        };
+        track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+        window.addEventListener('resize', update);
+        track._updateCount = update;
+        update();
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.addEventListener('click', () => {
+        const track = document.querySelector('.projects-grid');
+        if (!track) return;
+        track.scrollTo({ left: 0 });
+        requestAnimationFrame(() => track._updateCount && track._updateCount());
+        btn.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    }));
+
+    /* Long text collapses on phones; everything stays visible without JS or on wider screens. */
+    const hero = document.querySelector('.hero-description');
+    if (hero) {
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'more-btn'; b.setAttribute('aria-expanded', 'false'); b.textContent = 'Read more';
+        hero.after(b);
+        b.addEventListener('click', () => {
+            const open = hero.classList.toggle('clamped') === false;
+            b.textContent = open ? 'Show less' : 'Read more';
+            b.setAttribute('aria-expanded', String(open));
+        });
+        const sync = () => hero.classList.toggle('clamped', mq.matches && b.getAttribute('aria-expanded') !== 'true');
+        sync(); (mq.addEventListener ? mq.addEventListener('change', sync) : mq.addListener(sync));
+    }
+
+    document.querySelectorAll('.timeline-card').forEach(card => {
+        const longList = [...card.querySelectorAll('.bullet-list')].some(l => l.children.length > 2);
+        if (!longList && !card.querySelector('.press-strip')) return;
+        card.classList.add('has-more');
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'more-btn'; b.setAttribute('aria-expanded', 'false'); b.textContent = 'Show full details';
+        card.append(b);
+        b.addEventListener('click', () => {
+            const open = card.classList.toggle('expanded');
+            b.textContent = open ? 'Show less' : 'Show full details';
+            b.setAttribute('aria-expanded', String(open));
+            if (!open) card.scrollIntoView({ block: 'nearest' });
         });
     });
 }

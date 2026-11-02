@@ -337,3 +337,150 @@ a.company-name:hover { text-decoration: underline; }
     .btn-link, .btn-link-secondary { display: inline-flex; align-items: center; min-height: 44px; }
     .filter-btn { min-height: 44px; }
 }
+
+/* ==========================================================================
+   Phone layout (<= 720px)
+   Principles: one thing per screen-width, thumb-reach navigation at the
+   bottom, each content group scrolls sideways on its own, long text is
+   collapsed until asked for. Desktop and tablet rules above are untouched.
+   ========================================================================== */
+.tabbar, .carousel-count, .more-btn { display: none; }
+
+@media (max-width: 720px) {
+    :root { --gutter: 1rem; --tabbar-h: 3.6rem; }
+    html { scroll-padding-top: 4rem; }
+    body { font-size: 16px; padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom)); }
+    .container, .nav-container { padding-left: max(var(--gutter), env(safe-area-inset-left)); padding-right: max(var(--gutter), env(safe-area-inset-right)); }
+
+    /* Top bar: logo + CV + theme. Section navigation lives in the bottom tab bar. */
+    .nav-container { height: 3.5rem; }
+    .nav-toggle { display: none; }
+    .nav-links { display: none !important; }
+    .nav-actions .btn-cv { display: inline-flex; width: 2.75rem; height: 2.75rem; padding: 0; justify-content: center; }
+    .nav-actions .btn-cv span { display: none; }
+    .icon-btn { width: 2.75rem; height: 2.75rem; }
+
+    .tabbar {
+        display: grid; grid-template-columns: repeat(5, 1fr);
+        position: fixed; inset: auto 0 0 0; z-index: 150;
+        padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        background: var(--nav-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        border-top: 1px solid var(--border);
+    }
+    .tabbar a {
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.15rem;
+        height: var(--tabbar-h); color: var(--text-3); text-decoration: none;
+        font-size: 0.7rem; font-weight: 600; letter-spacing: 0.02em;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .tabbar a.active { color: var(--accent); }
+    .tabbar a:active { background: var(--accent-soft); }
+
+    /* Rhythm */
+    .section { padding: 2.25rem 0; }
+    .section-header { margin-bottom: 1.1rem; }
+    .section-title { font-size: 1.45rem; }
+    .section-lead { font-size: 0.95rem; }
+    #projects .section-lead { display: none; }
+    .card { box-shadow: none; }
+    .card:hover { border-color: var(--border); }
+
+    /* Hero: identity first, then actions, stats as a strip */
+    .hero-section { display: block; padding-top: 4.75rem; padding-bottom: 1.5rem; }
+    .hero-container { display: block; position: relative; }
+    .hero-avatar-wrapper { position: absolute; top: 0; right: 0; display: block; }
+    .avatar-card { padding: 0; background: none; border: 0; border-radius: 50%; max-width: none; width: auto; box-shadow: none; }
+    .avatar-img { width: 4.5rem; height: 4.5rem; aspect-ratio: 1; border-radius: 50%; border: 2px solid var(--accent); }
+    .status-badge, .hero-title { margin-right: 5.25rem; }
+    .avatar-info { display: none; }
+    .status-badge { font-size: 0.78rem; margin-bottom: 0.9rem; padding: 0.3rem 0.7rem; border-radius: 14px; }
+    .hero-title { font-size: 2rem; margin-bottom: 0.4rem; }
+    .hero-subtitle { font-size: 1.02rem; margin-bottom: 0.9rem; }
+    .hero-description { font-size: 0.98rem; margin-bottom: 1.1rem; }
+    .hero-description.clamped { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 0.3rem; }
+    .more-btn { display: inline-block; background: none; border: 0; color: var(--accent); font-weight: 600; font-size: 0.92rem; min-height: 44px; padding: 0 0.1rem; cursor: pointer; }
+    .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.25rem; }
+    .hero-actions .btn { justify-content: center; min-height: 48px; }
+    .hero-actions .copy-email { grid-column: 1 / -1; min-height: 44px; }
+
+    /* Shared carousel behaviour */
+    .about-grid, .projects-grid, .skills-grid, .hero-stats {
+        display: flex; gap: 0.75rem; overflow-x: auto; overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+        margin-left: calc(-1 * var(--gutter)); margin-right: calc(-1 * var(--gutter));
+        padding: 0.25rem var(--gutter) 0.5rem; scroll-padding: 0 var(--gutter);
+    }
+    .about-grid::-webkit-scrollbar, .projects-grid::-webkit-scrollbar, .skills-grid::-webkit-scrollbar,
+    .hero-stats::-webkit-scrollbar, .filter-tabs::-webkit-scrollbar { display: none; }
+    .about-grid > *, .projects-grid > *, .skills-grid > * { flex: 0 0 84%; scroll-snap-align: start; min-width: 0; }
+    .hero-stats > * { flex: 0 0 8.5rem; scroll-snap-align: start; }
+    .stat-card { padding: 0.8rem; }
+    .stat-number { font-size: 1.5rem; }
+    .stat-label { font-size: 0.8rem; line-height: 1.35; display: block; }
+    .carousel-count { display: block; text-align: center; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-3); margin-top: 0.35rem; }
+
+    /* About / skills cards */
+    .about-card { padding: 1.2rem; }
+    .skills-grid { align-items: flex-start; }
+    .skill-category { padding: 1.2rem; }
+    .skill-pill { font-size: 0.85rem; padding: 0.35rem 0.75rem; }
+    .skills-note { font-size: 0.82rem; margin-top: 0.75rem; }
+
+    /* Experience: compact timeline, long roles collapse */
+    .timeline { padding-left: 1.2rem; }
+    .timeline::before { left: 4px; }
+    .timeline-dot { left: -1.2rem; width: 12px; height: 12px; top: 1.1rem; border-width: 2px; }
+    .timeline-item { margin-bottom: 1rem; }
+    .timeline-card { padding: 1.1rem; }
+    .timeline-header { flex-direction: column; gap: 0.45rem; margin-bottom: 0.6rem; }
+    .date-badge { white-space: normal; font-size: 0.75rem; }
+    .role-title { font-size: 1.1rem; }
+    .role-block { padding-left: 0.8rem; margin-top: 1.1rem; }
+    .bullet-list li { font-size: 0.95rem; }
+    .timeline-card.has-more:not(.expanded) .bullet-list li:nth-child(n+3),
+    .timeline-card.has-more:not(.expanded) .press-strip,
+    .timeline-card.has-more:not(.expanded) .tech-tags { display: none; }
+    .timeline-card .more-btn { display: block; width: 100%; margin-top: 0.5rem; border-top: 1px dashed var(--border-strong); text-align: left; padding-top: 0.25rem; }
+    .timeline-card:not(.has-more) .more-btn { display: none; }
+
+    /* Projects: scrolling filter chips, one card per swipe */
+    .filter-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0.5rem; margin: 0 calc(-1 * var(--gutter)) 0.9rem; padding: 0 var(--gutter); }
+    .filter-btn { flex: 0 0 auto; white-space: nowrap; min-height: 44px; padding: 0 1rem; }
+    .project-content { padding: 1.1rem; gap: 0.6rem; }
+    .project-content p { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; flex: 0 1 auto; font-size: 0.95rem; }
+    .project-content .tech-tags { max-height: 4.6rem; overflow: hidden; }
+    .project-links { margin-top: auto; flex-wrap: wrap; gap: 0.25rem 1rem; justify-content: flex-start; }
+    .badge { font-size: 0.68rem; }
+
+    /* Education: stacked, tight */
+    .edu-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+    .edu-card { padding: 1.1rem; }
+
+    /* Contact: 2 x 2 tiles */
+    .contact-card { padding: 1.1rem; }
+    .contact-header { margin-bottom: 1.1rem; }
+    .contact-links { grid-template-columns: 1fr; gap: 0.6rem; }
+    .contact-item { min-height: 3.5rem; padding: 0.7rem 0.85rem; }
+    .contact-icon { width: 36px; height: 36px; }
+    .contact-val { font-size: 0.95rem; }
+
+    .footer { padding: 1.5rem 0; font-size: 0.8rem; }
+
+    /* Modal becomes a bottom sheet */
+    .modal-backdrop { padding: 0; align-items: flex-end; }
+    .modal-box {
+        width: 100%; max-height: 92dvh; border-radius: 20px 20px 0 0; border-bottom: 0;
+        padding: 0 1.1rem calc(1.5rem + env(safe-area-inset-bottom));
+        animation: sheet-up 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        overscroll-behavior: contain;
+    }
+    @keyframes sheet-up { from { transform: translateY(100%); } to { transform: none; } }
+    .modal-close {
+        position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: center;
+        width: 2.75rem; height: 2.75rem; margin: 0.35rem -0.35rem 0 auto; background: var(--bg-elev);
+    }
+    .modal-badge { padding-right: 0; margin-top: -2.4rem; padding-right: 3rem; }
+    .modal-body h2 { font-size: 1.3rem; }
+    .modal-links { display: grid; grid-template-columns: 1fr 1fr; }
+    .modal-links .btn { justify-content: center; min-height: 44px; }
+}
