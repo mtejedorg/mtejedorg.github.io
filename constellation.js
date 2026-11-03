@@ -21,7 +21,7 @@
         ['Meta XR SDK', 'xr', 3], ['OpenXR', 'xr', 3], ['XR Interaction Toolkit', 'xr', 3], ['Compositor Layers', 'xr', 3],
         ['Photon Fusion 2', 'xr', 3], ['Photon Realtime / Voice', 'xr', 3], ['Unity Gaming Services', 'xr', 3],
         ['Meta Spatial SDK', 'xr', 1], ['Android XR', 'xr', 1],
-        ['Claude Code skills', 'ai', 3], ['Docker', 'ai', 3], ['Firebase', 'ai', 3], ['Jenkins', 'ai', 3], ['Gradle', 'ai', 3],
+        ['Claude Code skills', 'ai', 3], ['Multi-agent workflows (subagents)', 'ai', 3], ['MemPalace / Graphify', 'ai', 3], ['ComfyUI asset pipeline', 'ai', 3], ['Docker', 'ai', 3], ['Firebase', 'ai', 3], ['Jenkins', 'ai', 3], ['Gradle', 'ai', 3],
         ['Gemini / Vertex AI', 'ai', 2], ['GCP / Cloud Run', 'ai', 2], ['Function calling and RAG', 'ai', 2],
         ['Google ADK', 'ai', 1], ['FastAPI', 'ai', 1], ['Unity MCP', 'ai', 1],
         ['Data-driven UI', 'arch', 3], ['Native rendering plugins', 'arch', 3], ['Zenject', 'arch', 3], ['UniTask', 'arch', 3],
@@ -47,9 +47,8 @@
           skills: ['Kotlin', 'Android XR', 'Firebase', 'Python', 'FastAPI', 'Google ADK', 'Gemini / Vertex AI', 'Function calling and RAG', 'GCP / Cloud Run', 'Docker'] },
         { id: 'spatial', name: 'Spatial prototypes', details: 'modal-spatial', skills: ['Kotlin', 'Meta Spatial SDK', 'Android XR'] },
         { id: 'cluckwars', name: 'Cluck Wars', details: 'modal-cluckwars',
-          skills: ['C#', 'Unity', 'Photon Fusion 2', 'Unity Gaming Services', 'Zenject', 'URP / Shader Graph', 'Unity MCP'] },
-        { id: 'saintmanick', name: 'Saint Manick', details: 'modal-saintmanick', skills: ['GDScript / Godot 4'] },
-        { id: 'cvkit', name: 'cvkit', details: 'https://mtejedorg.github.io/cvkit/', skills: ['Claude Code skills', 'Python'] },
+          skills: ['C#', 'Unity', 'Photon Fusion 2', 'Unity Gaming Services', 'Zenject', 'URP / Shader Graph', 'Unity MCP', 'Claude Code skills', 'Multi-agent workflows (subagents)', 'ComfyUI asset pipeline'] },
+        { id: 'saintmanick', name: 'Saint Manick', details: 'modal-saintmanick', skills: ['GDScript / Godot 4', 'Claude Code skills', 'Multi-agent workflows (subagents)', 'MemPalace / Graphify', 'ComfyUI asset pipeline'] },        { id: 'cvkit', name: 'cvkit', details: 'https://mtejedorg.github.io/cvkit/', skills: ['Claude Code skills', 'Python'] },
         { id: 'ci', name: 'YBVR CI and QA builds', details: null, skills: ['Gradle', 'Jenkins', 'Unity', 'Bash'] },
         { id: 'shaders', name: 'Shaders and URP', details: null, chip: false, skills: ['HLSL / GLSL / Metal', 'URP / Shader Graph'] }
     ];
@@ -102,9 +101,12 @@
         if (key === layoutKey) return;
         layoutKey = key; seed = 7;
 
-        const W = w, H = phone ? 4 * 250 : 640, font = phone ? 12.5 : 12;
+        // Phones stack the constellations; each band grows with its number of stars.
+        const bandH = groups.map(g => Math.max(230, skills.filter(s => s.group === g.id).length * 25));
+        const bandY = bandH.map((h, k) => bandH.slice(0, k).reduce((a, c) => a + c, 0));
+        const W = w, H = phone ? bandH.reduce((a, c) => a + c, 0) : 640, font = phone ? 12.5 : 12;
         const regions = phone
-            ? groups.map((g, k) => ({ x0: 0, x1: W, y0: k * 250, y1: (k + 1) * 250 }))
+            ? groups.map((g, k) => ({ x0: 0, x1: W, y0: bandY[k], y1: bandY[k] + bandH[k] }))
             : [{ x0: 0, x1: W / 2, y0: 0, y1: H / 2 }, { x0: W / 2, x1: W, y0: 0, y1: H / 2 },
                { x0: W / 2, x1: W, y0: H / 2, y1: H }, { x0: 0, x1: W / 2, y0: H / 2, y1: H }];
         const centers = regions.map(r => ({ x: (r.x0 + r.x1) / 2, y: (r.y0 + r.y1) / 2 + 14 }));
