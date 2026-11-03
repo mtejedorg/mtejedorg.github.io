@@ -455,31 +455,41 @@
                 <div class="section-header">
                     <span class="section-tag">Stack</span>
                     <h2 class="section-title">Skills</h2>
-                    <p class="section-lead">Highlighted items are the ones I have shipped with and could be interviewed on in depth.</p>
+                    <p class="section-lead">Each group is ordered by depth: production-level skills first (shipped products and my current games), then working knowledge from prototypes and projects.</p>
+                    <div class="skills-toggle" role="group" aria-label="Skills view">
+                        <button type="button" data-view="list" aria-pressed="true">List</button>
+                        <button type="button" data-view="constellation" aria-pressed="false">Constellation <span class="toggle-hint">· skills by project</span></button>
+                    </div>
+                </div>
+                <div class="constellation" id="constellation">
+                    <div class="constellation-projects filter-tabs" role="group" aria-label="Projects"></div>
+                    <p class="c-legend" aria-label="Star brightness"></p>
+                    <div class="constellation-sky"></div>
+                    <p class="constellation-info" aria-live="polite"></p>
                 </div>
                 <div class="skills-grid" data-carousel>
                     <div class="card skill-category">
                         <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>Languages and engines</h3>
                         <div class="skill-pills">
-                            <span class="skill-pill featured">C#</span><span class="skill-pill featured">Unity</span><span class="skill-pill featured">C++</span><span class="skill-pill">Java</span><span class="skill-pill">Kotlin</span><span class="skill-pill">Python</span><span class="skill-pill">GDScript / Godot 4</span><span class="skill-pill">HLSL / GLSL / Metal</span><span class="skill-pill">Bash</span>
+                            <span class="skill-pill">C#</span><span class="skill-pill">Unity</span><span class="skill-pill">C++</span><span class="skill-pill">Java</span><span class="skill-pill">Kotlin</span><span class="skill-pill">Python</span><span class="skill-pill">GDScript / Godot 4</span><span class="skill-pill">HLSL / GLSL / Metal</span><span class="skill-pill">Bash</span>
                         </div>
                     </div>
                     <div class="card skill-category">
                         <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="5"></rect><circle cx="7.5" cy="12" r="2"></circle><circle cx="16.5" cy="12" r="2"></circle></svg>XR and multiplayer</h3>
                         <div class="skill-pills">
-                            <span class="skill-pill featured">Meta XR SDK</span><span class="skill-pill featured">OpenXR</span><span class="skill-pill featured">Photon Fusion 2</span><span class="skill-pill">XR Interaction Toolkit</span><span class="skill-pill">Compositor Layers</span><span class="skill-pill">Meta Spatial SDK</span><span class="skill-pill">Android XR</span><span class="skill-pill">Unity Gaming Services</span><span class="skill-pill">Photon Realtime / Voice</span>
+                            <span class="skill-pill">Meta XR SDK</span><span class="skill-pill">OpenXR</span><span class="skill-pill">XR Interaction Toolkit</span><span class="skill-pill">Compositor Layers</span><span class="skill-pill">Photon Fusion 2</span><span class="skill-pill">Photon Realtime / Voice</span><span class="skill-pill">Unity Gaming Services</span><span class="skill-pill">Meta Spatial SDK</span><span class="skill-pill">Android XR</span>
                         </div>
                     </div>
                     <div class="card skill-category">
                         <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path></svg>AI, cloud and tooling</h3>
                         <div class="skill-pills">
-                            <span class="skill-pill featured">Google ADK</span><span class="skill-pill featured">RAG and function calling</span><span class="skill-pill featured">Claude Code skills</span><span class="skill-pill">Vertex AI / Gemini</span><span class="skill-pill">Unity MCP</span><span class="skill-pill">FastAPI</span><span class="skill-pill">GCP / Cloud Run</span><span class="skill-pill">Docker</span><span class="skill-pill">Firebase</span><span class="skill-pill">Jenkins</span>
+                            <span class="skill-pill">Claude Code skills</span><span class="skill-pill">Docker</span><span class="skill-pill">Firebase</span><span class="skill-pill">Jenkins</span><span class="skill-pill">Gradle</span><span class="skill-pill">Gemini / Vertex AI</span><span class="skill-pill">GCP / Cloud Run</span><span class="skill-pill">Function calling and RAG</span><span class="skill-pill">Google ADK</span><span class="skill-pill">FastAPI</span><span class="skill-pill">Unity MCP</span>
                         </div>
                     </div>
                     <div class="card skill-category">
                         <h3 class="skill-cat-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Architecture and rendering</h3>
                         <div class="skill-pills">
-                            <span class="skill-pill featured">Data-driven UI</span><span class="skill-pill featured">Native rendering plugins</span><span class="skill-pill">Zenject</span><span class="skill-pill">UniTask</span><span class="skill-pill">Addressables</span><span class="skill-pill">URP / Shader Graph</span><span class="skill-pill">Vulkan / OpenGL ES</span><span class="skill-pill">ExoPlayer / Media3</span><span class="skill-pill">Remote Config / A/B testing</span>
+                            <span class="skill-pill">Data-driven UI</span><span class="skill-pill">Native rendering plugins</span><span class="skill-pill">Zenject</span><span class="skill-pill">UniTask</span><span class="skill-pill">Addressables</span><span class="skill-pill">URP / Shader Graph</span><span class="skill-pill">Vulkan / OpenGL ES</span><span class="skill-pill">ExoPlayer / Media3</span><span class="skill-pill">Remote Config / A/B testing</span>
                         </div>
                     </div>
                 </div>
@@ -565,5 +575,6 @@
     </div>
 
     <script src="main.js"></script>
+    <script src="constellation.js"></script>
 </body>
 </html>

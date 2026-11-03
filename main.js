@@ -143,7 +143,7 @@ function initDiagrams() {
 
 /* Filters ----------------------------------------------------------------- */
 function initProjectFilters() {
-    const buttons = document.querySelectorAll('.filter-btn');
+    const buttons = document.querySelectorAll('#projects .filter-btn');
     const cards = document.querySelectorAll('.project-card');
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -335,6 +335,7 @@ function initProjectModals() {
         closeBtn.focus();
     };
 
+    window.openProjectModal = open;
     document.querySelectorAll('.view-project-btn').forEach(btn => {
         btn.addEventListener('click', () => open(btn.getAttribute('data-modal'), btn));
     });
@@ -419,7 +420,7 @@ function initPhone() {
         track._updateCount = update;
         update();
     });
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('#projects .filter-btn').forEach(btn => btn.addEventListener('click', () => {
         const track = document.querySelector('.projects-grid');
         if (!track) return;
         track.scrollTo({ left: 0 });

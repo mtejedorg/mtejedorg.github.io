@@ -564,3 +564,67 @@ a.company-name:hover { text-decoration: underline; }
     .hero-actions .btn { font-size: 0.95rem; }
 }
 .hero-proof a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Skills: List | Constellation toggle */
+.skills-toggle { display: none; margin-top: 1rem; padding: 3px; border: 1px solid var(--border); border-radius: var(--radius-full); gap: 2px; }
+.skills-toggle.ready { display: inline-flex; }
+.skills-toggle button { border: 0; background: transparent; color: var(--text-2); font: inherit; font-weight: 600; font-size: 0.88rem; padding: 0.4rem 1rem; border-radius: var(--radius-full); cursor: pointer; min-height: 2.25rem; }
+.skills-toggle button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.constellation { display: none; }
+#skills.view-constellation .constellation { display: block; }
+#skills.view-constellation .skills-grid, #skills.view-constellation .skills-grid + .carousel-count { display: none; }
+
+/* Constellation */
+.constellation-projects { margin-bottom: 0.9rem; }
+.constellation-sky {
+    position: relative; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border);
+    background: radial-gradient(120% 90% at 50% 0%, color-mix(in srgb, var(--accent-2) 14%, var(--bg-elev)), var(--bg-elev) 70%);
+}
+.constellation-sky svg { display: block; width: 100%; height: auto; }
+.c-dust circle { fill: var(--text-3); opacity: 0.35; animation: twinkle 6s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.55; } }
+.c-group { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.18em; fill: var(--text-2); }
+.c-line { stroke: var(--accent); stroke-opacity: 0.22; stroke-width: 1; }
+.c-line-cross { stroke-dasharray: 3 5; stroke-opacity: 0.14; }
+.c-proj-line { stroke: var(--accent); stroke-width: 2; stroke-linecap: round; filter: drop-shadow(0 0 3px var(--accent)); stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-line 0.6s ease-out forwards; }
+@keyframes draw-line { to { stroke-dashoffset: 0; } }
+.c-star { cursor: pointer; transition: opacity 0.25s; }
+.c-hit { fill: transparent; }
+.c-core { fill: var(--text); }
+.c-glow { fill: var(--accent); opacity: 0.22; transition: opacity 0.25s; }
+.c-star.d3 .c-core { fill: var(--accent); filter: drop-shadow(0 0 4px var(--accent)); }
+.c-star.d3 .c-glow { opacity: 0.3; }
+.c-star.d2 .c-core { fill: color-mix(in srgb, var(--accent) 60%, var(--text-2)); }
+.c-star.d1 .c-core { fill: var(--text-3); }
+.c-star.d1 .c-glow { opacity: 0.1; }
+.c-label { font-family: var(--font-main); font-size: 12px; font-weight: 500; fill: var(--text-2); paint-order: stroke; stroke: var(--bg-elev); stroke-width: 3px; stroke-linejoin: round; }
+.c-star.d3 .c-label { fill: var(--text); font-weight: 600; }
+.c-star:hover .c-label, .c-star.sel .c-label { fill: var(--accent); }
+svg.focusing .c-star:not(.near) { opacity: 0.2; }
+svg.focusing .c-lines { opacity: 0.25; }
+svg.focusing .c-star.near .c-glow { opacity: 0.55; }
+#skills.view-constellation .constellation { display: flex; flex-direction: column; }
+.constellation-projects { order: 0; } .c-legend { order: 1; }
+.constellation-info { order: 2; margin: 0 0 0.75rem; min-height: 3.2em; color: var(--text-2); font-size: 0.93rem; line-height: 1.6; background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 0.7rem 0.9rem; }
+.constellation-sky { order: 3; }
+.constellation-info { position: sticky; top: calc(4.25rem + 0.5rem); z-index: 3; box-shadow: var(--shadow); }
+.c-note { font-size: 0.85rem; color: var(--text-2); }
+.c-star:focus-visible { outline: none; } .c-star:focus-visible .c-glow { opacity: 0.7; } .c-star:focus-visible .c-label { fill: var(--accent); }
+.toggle-hint { font-weight: 500; opacity: 0.8; }
+.constellation-info strong { color: var(--text); }
+.c-depth { font-family: var(--font-mono); font-size: 0.72rem; padding: 0.1rem 0.5rem; border-radius: var(--radius-full); border: 1px solid var(--border-strong); margin-left: 0.4rem; }
+.c-depth.d3 { color: var(--accent); border-color: var(--accent); }
+.c-details, .c-proj { font: inherit; font-size: 0.85rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: var(--radius-full); padding: 0.15rem 0.7rem; margin: 0.15rem 0.2rem 0.15rem 0; cursor: pointer; text-decoration: none; display: inline-block; }
+.c-details { margin-left: 0.5rem; }
+.c-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; margin: 0 0 0.6rem; font-size: 0.82rem; color: var(--text-2); }
+.c-legend span { white-space: nowrap; }
+.c-legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 0.3rem; }
+.c-legend i.d3 { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+.c-legend i.d2 { background: color-mix(in srgb, var(--accent) 60%, var(--text-2)); }
+.c-legend i.d1 { background: var(--text-3); }
+@media (prefers-reduced-motion: reduce) { .c-proj-line { animation: none; stroke-dashoffset: 0; } }
+@media (max-width: 720px) {
+    .constellation-info { position: sticky; top: calc(3.5rem + 0.5rem); z-index: 3; box-shadow: var(--shadow); }
+    .toggle-hint { display: none; }
+    .skills-toggle button { min-height: 44px; padding: 0 1.1rem; }
+}
