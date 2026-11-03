@@ -210,9 +210,10 @@ const modalData = {
             { label: 'ybvr.com ↗', url: 'https://ybvr.com/' }
         ],
         description: `
-            <p>Live sport and music in VR and MR on Meta Quest, with the viewer in control: multi-camera switching, immersive 180°/360° streams, and a flat 2D option. I led the client side from prototype through release and live iteration, and built the team that shipped it. Xtadium carried NBA games for some years, its flagship content, alongside EuroLeague fixtures such as Real Madrid–Barcelona, streamed at a steady 8K and 60 fps.</p>
+            <p>Live sport and music in VR and MR on Meta Quest, with the viewer in control: seamless switching between several immersive 180°/360° cameras and flat 2D feeds in the same experience, so each viewer chooses what to watch and how. I led the client side from prototype through release and live iteration, and built the team that shipped it. Xtadium carried NBA games for some years, its flagship content, alongside EuroLeague fixtures such as Real Madrid–Barcelona, streamed at a steady 8K and 60 fps.</p>
             <h4>What I owned</h4>
             <ul>
+                <li><strong>Multi-camera experience:</strong> several immersive and flat 2D cameras combined in one XR scene, switched without a visible cut, which made the app far more interactive. I co-designed it, technically and in UI/UX, led its client and SDK development and wrote the main parts, and maintained the player; the backend was another team's.</li>
                 <li><strong>Client architecture:</strong> Unity 2022.3 LTS and Unity 6, ScriptableObject-based, with the whole UI generated from CMS contracts and server state so layouts changed without a release.</li>
                 <li><strong>Performance:</strong> firm 60 fps on the Oculus Go and 90/120 Hz on Quest, with video and key UI on Compositor Layers, SRP batching, occlusion culling and zero-allocation async.</li>
                 <li><strong>Watch Party:</strong> multi-user sessions on Photon Realtime and Voice with sub-frame video synchronization across clients.</li>
